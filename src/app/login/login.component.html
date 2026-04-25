@@ -1,0 +1,20 @@
+<section class="login-page">
+  <h1>Login</h1>
+  <form (ngSubmit)="submit()" class="login-form">
+    <label>
+      Client code
+      <input
+        type="number"
+        [(ngModel)]="value"
+        name="clientCode"
+        required
+        autocomplete="off"
+      />
+    </label>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p *ngIf="response() as res" class="response">Response: {{ res }}</p>
+  <p *ngIf="error() as err" class="error">{{ err }}</p>
+</section>
